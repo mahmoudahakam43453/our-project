@@ -1,0 +1,263 @@
+أنهاردة يجماعة أنشاء الله هنتعمل مع بعض ال 
+
+#timing()
+
+الخاص بالكود بتاعك عن طريق موديل أسمه ال timeit
+
+ال timeit
+
+حاجة من الحاجات الأحترافية اللي هتخليك واحد محترف في المجال يعرف ال 
+
+execution time بتاع الكود بتاعة 
+
+عشان يقدر يقيس ال performance ( الأداة ) 
+
+بتاع التطبيق 
+
+عن طريق ال test الخاص بال functionlity 
+
+اللي في تطبيق ده 
+
+ال timeit
+
+عبارة عن module بيجيب لك ال execution time ( وقت التنفيذ ) 
+
+بتاع الكود بتاعك عبارة عن أنه هو بيعمل run
+
+1 مليون مرة 
+
+ويديك في كل مرة أقل وقت أتنفذ فيه الكود ده 
+
+ده طبعا بيستخدم في ال performance , test 
+
+الخاص بال functions بتاعتك 
+
+تعالو نشوف أي اللي بيقبله 
+
+# - timeit(stmt, setup, timer, number)
+
+# - timeit(pass, pass, default, 1.000.000) . default values
+
+تعالو نشوف أستعمالهم أي 
+
+# - stmt: code you want measure the execution time
+
+# - setup: setup done before the code execution (import module or any thing )
+
+# - timer: the timer value
+
+# - number: how many execution that will run  
+
+تعالو نشوف عملي عشان نفهم أكتر 
+
+تعالو نعمل import لل timeit 
+
+تعالو الأول نعرف ال timeit 
+
+ده جواها أي 
+
+مثال عملي :
+
+
+
+import timeit
+
+
+print(dir(timeit))
+
+الأجابة :
+
+['Timer', '__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', '_globals', 'default_number', 'default_repeat', 'default_timer', 'dummy_src_name', 'gc', 'itertools', 'main', 'reindent', 'repeat', 'sys', 'template', 'time', 'timeit']
+
+# جواها الخصائص دي 
+
+# في عندك < repeat , timeit > 
+
+# دول اللي أحنا هنستخدمهم 
+
+###
+
+تعالو نبدئ ب أول عملية testing عادية 
+
+تعالو مثلا نعمل حاجة عادية 
+
+تعالو مثلا نقرر أسمي ده 1000
+
+مثال عملي :
+
+import timeit
+
+
+print(timeit.timeit("'mahmoud' * 1000"))
+
+
+# تعالو نشوف العملية دي هتاخد وقت قد أي 
+
+
+الأجابة :
+
+0.42831289999958244
+PS D:\my_project\python.project> & C:/Users/Mahmoud/AppData/Local/Microsoft/WindowsApps/python3.10.exe "d:/my_project/python.project/Python 3.12/mahmoud.py"
+0.43638909999936004
+PS D:\my_project\python.project> & C:/Users/Mahmoud/AppData/Local/Microsoft/WindowsApps/python3.10.exe "d:/my_project/python.project/Python 3.12/mahmoud.py"
+0.4348308000007819
+PS D:\my_project\python.project> 
+
+# زي ما أنتو ما شايفين أيدي ال execution time ( وقت التنفيذ )
+
+# وقت تنفيذ التكرار 
+
+تعالو نعمل نفس الطريقه اللي فوق بس مختصرة شوية 
+
+مثال عملي :
+
+import timeit
+
+
+print(timeit.timeit("name = 'mahmoud'; name * 1000"))
+
+الأجابة :
+
+0.44982790000358364
+PS D:\my_project\python.project> & C:/Users/Mahmoud/AppData/Local/Microsoft/WindowsApps/python3.10.exe "d:/my_project/python.project/Python 3.12/mahmoud.py"
+0.7036258000007365
+PS D:\my_project\python.project> & C:/Users/Mahmoud/AppData/Local/Microsoft/WindowsApps/python3.10.exe "d:/my_project/python.project/Python 3.12/mahmoud.py"
+1.323491200000717
+
+
+# وقت تنفيذ تكرار أسمي 
+
+###
+
+تعالو بقي نشوف موضوع ال setup 
+
+لو أنا عندي علي سبيل المثال موديول أسمه random 
+
+تعالي نشوف الأول كنا بنستعمل الموديول ده أزاي 
+
+ال random 
+
+بيطلع ليك أرقام عشوائي في ال range اللي أنت هتديهوله 
+
+تعالو نشوف مثال عملي 
+
+مثال عملي :
+
+import timeit
+
+import random
+
+
+print(random.randint(0, 50))
+
+
+الأجابة :
+
+12
+PS D:\my_project\python.project> & C:/Users/Mahmoud/AppData/Local/Microsoft/WindowsApps/python3.10.exe "d:/my_project/python.project/Python 3.12/mahmoud.py"
+43
+PS D:\my_project\python.project> & C:/Users/Mahmoud/AppData/Local/Microsoft/WindowsApps/python3.10.exe "d:/my_project/python.project/Python 3.12/mahmoud.py"
+31
+PS D:\my_project\python.project> 
+
+# كل مرة بيطلع رقم عشوائي 
+
+###
+
+طب أنا عاوز هجربة في ال 
+
+execution time
+
+حلو جدا 
+
+هاجي هنا في ال stmt 
+
+عشان هجربة 
+
+# لحظة واحدة بقي هنا 
+
+# خلينا نهمش هنا 
+
+# الكود اللي بيعمل أختبار ملوش علاقة بالحاجات اللي أنت عملها import 
+
+# في الصفحة والكلام ده كله 
+
+# في حاجة لازم تقولها ليه عشان يبدئ يستخدم ال 
+
+# ال random module ده 
+
+# وهي ال setup 
+
+مثال عملي :
+
+import timeit
+
+import random
+
+print(timeit.timeit(stmt="random.randint(0, 50)", setup="import random"))
+
+
+الأجابة :
+
+0.8560039000003599
+PS D:\my_project\python.project> & C:/Users/Mahmoud/AppData/Local/Microsoft/WindowsApps/python3.10.exe "d:/my_project/python.project/Python 3.12/mahmoud.py"
+0.9556634000000486
+PS D:\my_project\python.project> & C:/Users/Mahmoud/AppData/Local/Microsoft/WindowsApps/python3.10.exe "d:/my_project/python.project/Python 3.12/mahmoud.py"
+0.9193064999999478
+
+# قبل تنفيذ الكود ده random.randint(0, 50)
+
+# هيعمل import ل random , module 
+
+# وبعدين يعمل execute ل ده ويحسب ليك الوقت 
+
+###
+
+قولت أنت في أول الدرس أني أحنا هنستخدم ال 
+
+< Timeit ,  repeat >
+
+ال 
+
+#repeat() 
+
+هيطلع ليا أكتر من نتيجة زي ما هتشوفو دلوقتي 
+
+تعالو ناخد مثال عملي عملي عشان نفهم الفكرة 
+
+مثال عملي :
+
+import timeit
+
+import random
+
+print(timeit.repeat(stmt="random.randint(0, 50)", setup="import random", repeat=4))
+
+
+# لحظة واحدة هو هيعمل أي هنا 
+
+# هيعمل بقي التجارب بتاعتك دي أربع مرات 
+
+# هيعيد ال execution ده أربع مرات 
+
+# طب هي دي ليها علاقه بالرقم اللي فوق 
+
+# لا أستني دي حاجة ودي حاجة 
+
+# هو هنا بيعيد ال execution test ( اختبار التنفيذ ) 
+
+# كله علي بعضة أربع مرات 
+
+# وكل مره الكود فيها بيعمل run 
+
+# عدد المرات اللي أنت بتديهالو 
+
+# وبعد كده يطلعلك أقل مرة فيهم
+
+# يعني بيطلعلك أربع مرات 
+
+الأجابة :
+
+[1.0421227000006184, 0.9252882000000682, 0.9274213999997301, 0.8837056000011216]
+
+
